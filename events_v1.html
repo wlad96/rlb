@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rīgas Latviešu biedrība - Events v1</title>
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Rīgas Latviešu biedrība" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./fonts/css/all.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <link href="./css/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+
+<body>
+    <div class="page">
+        <div id="mobile-menu"></div>
+        <div class="mobile-menu-overlay"></div>
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__left">
+                        <div class="mobileMenuBtn__wrap">
+                            <button type="button" class="mobileMenuBtn">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                        </div>
+                        <div class="logo">
+                            <a href="#" class="logo__link">
+                                <img src="./img/logo.webp" class="logo__img" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__right">
+                        <nav class="menu">
+                            <ul class="menu__ul">
+                                <li class="menu__li active">
+                                    <a href="#" class="menu__link">
+                                        Calendar
+                                    </a>
+                                </li>
+                                <li class="menu__li menu__li--has-sub">
+                                    <a href="javasript:;" class="menu__link">
+                                        Upcoming events
+                                    </a>
+                                    <ul class="menu__sub">
+                                        <li class="menu__sub-li">
+                                            <a href="#" class="menu__sub-link">Concerts</a>
+                                        </li>
+                                        <li class="menu__sub-li">
+                                            <a href="#" class="menu__sub-link">Theatre</a>
+                                        </li>
+                                        <li class="menu__sub-li">
+                                            <a href="#" class="menu__sub-link">Exhibitions</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__li">
+                                    <a href="#" class="menu__link">
+                                        News
+                                    </a>
+                                </li>
+                                <li class="menu__li">
+                                    <a href="#" class="menu__link">
+                                        Premises
+                                    </a>
+                                </li>
+                                <li class="menu__li">
+                                    <a href="#" class="menu__link">
+                                        Contacts
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="lang lang--has-sub">
+                            <div class="lang__current">
+                                <p class="langCurrent__text">ENG</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <ul class="lang__ul">
+                                <li class="lang__li">
+                                    <a href="#" class="lang__link">LV</a>
+                                </li>
+                                <li class="lang__li">
+                                    <a href="#" class="lang__link">ENG</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="search">
+                            <div class="search__btnWrap">
+                                <button type="button" class="search__btn">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="calendar__section">
+                <div class="container">
+                    <div class="section__header">
+                        <div class="sectionHeader__titleWrap" data-aos="fade-right">
+                            <h2 class="sectionHeader__title">
+                                Calendar
+                            </h2>
+                        </div>
+                        <div class="sectionHeader__calendar" data-aos="fade-left">
+                            <div class="sectionHeaderCalendar__info" id="calendarToggle">
+                                <i class="fa-regular fa-calendar"></i>
+                                <p class="sectionHeaderCalendarInfo-text" id="calendarText">
+                                    14-20 November
+                                </p>
+                            </div>
+                        
+                            <div class="calendar-dropdown" id="calendarDropdown">
+                                <div id="calendar"></div>
+                                <div class="calendar__footer">
+                                    <div class="calendarFooter__elem">
+                                        <div class="calendarFooter__cyrcle calendarFooter__cyrcle-green">
+
+                                        </div>
+                                        <p class="calendarFooter__text">
+                                            Concert
+                                        </p>
+                                    </div>
+                                    <div class="calendarFooter__elem">
+                                        <div class="calendarFooter__cyrcle calendarFooter__cyrcle-brown">
+
+                                        </div>
+                                        <p class="calendarFooter__text">
+                                            Private event
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendar__week"></div>
+                </div>
+            </section>
+            <section class="upcoming__section">
+                <div class="container">
+                    <div class="section__header">
+                        <div class="sectionHeader__titleWrap" data-aos="fade-right">
+                            <h2 class="sectionHeader__title">
+                                Events
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="upcoming__content" data-aos="fade-up">
+                        <div class="events__list">
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-1.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Raivo Stašana Valentīndienas koncerts “Romantisks solo saksofonam”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-2.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">20.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Tautas deju koncerts “Latviju caurvijot”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-3.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">28.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Mēs – sava laika dvēseles liecinieki
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-4.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.03</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Jauno pianistu koncerts
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-1.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Raivo Stašana Valentīndienas koncerts “Romantisks solo saksofonam”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-2.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">20.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Tautas deju koncerts “Latviju caurvijot”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-3.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">28.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Mēs – sava laika dvēseles liecinieki
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-4.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.03</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Jauno pianistu koncerts
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-1.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Raivo Stašana Valentīndienas koncerts “Romantisks solo saksofonam”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-2.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">20.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Tautas deju koncerts “Latviju caurvijot”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-3.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">28.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Mēs – sava laika dvēseles liecinieki
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-4.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.03</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Jauno pianistu koncerts
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-1.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Raivo Stašana Valentīndienas koncerts “Romantisks solo saksofonam”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-2.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">20.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Tautas deju koncerts “Latviju caurvijot”
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-3.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">28.02</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Mēs – sava laika dvēseles liecinieki
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="event">
+                                <div class="event__imgWrap">
+                                    <img src="./img/event-4.webp" class="event__img" alt="">
+                                    <div class="eventImgWrap__overlay">
+                                        <div class="btn eventImgWrap__overlay-btn">
+                                            View more information
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="event__content">
+                                    <div class="event__dateWrap">
+                                        <p class="event__date">14.03</p>
+                                        <p class="event__year">2026</p>
+                                    </div>
+                                    <div class="event__titleWrap">
+                                        <h5 class="event__title">
+                                            Jauno pianistu koncerts
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="pagination">
+                            <a href="#" class="pagination__link active">1</a>
+                            <a href="#" class="pagination__link">2</a>
+                            <a href="#" class="pagination__link">3</a>
+                            <a href="#" class="pagination__link">4</a>
+                            <a href="#" class="pagination__link">5</a>
+                            <div class="pagination__link">...</div>
+                            <a href="#" class="pagination__link">10</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__top">
+                        <div class="footer__col">
+                            <div class="footer__logoWrap">
+                                <img src="./img/footer-logo.webp" class="footer__logo" alt="">
+                            </div>
+                            <div class="footer__info">
+                                <p class="footerInfo__text">
+                                    Rīgas Latviešu biedrība Merķeļa iela 13, Rīga, LV-1050, Latvija
+                                </p>
+                                <p class="footerInfo__text">
+                                    <a href="tel:+37129520251">
+                                        +371 29520251
+                                    </a>
+                                    <br/>
+                                    <a href="tel:+37129601241">
+                                        +371 29601241
+                                    </a>
+                                </p>
+                                <p class="footerInfo__text">
+                                    <a href="mailto:info@rlb.lv">
+                                        info@rlb.lv
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="footer__col footer__col-center footer__col-hide">
+                            <nav class="footer__menu">
+                                <a href="#" class="footerMenu__link">
+                                    Calendar
+                                </a>
+                                <a href="#" class="footerMenu__link">
+                                    Upcoming events
+                                </a>
+                                <a href="#" class="footerMenu__link">
+                                    Premises
+                                </a>
+                                <a href="#" class="footerMenu__link">
+                                    News
+                                </a>
+                                <a href="#" class="footerMenu__link">
+                                    Contacts
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="footer__col footer__col-right">
+                            <div class="footer__rightWrap">
+                                <form>
+                                    <div class="subscribe">
+                                        <label class="subscribe__label" for="subscribe">
+                                            Subscribe to news
+                                        </label>
+                                        <div class="subscribe__inputWrap">
+                                            <input type="text" class="subscribe__input" placeholder="Enter email" id="subscribe">
+                                            <button type="button" class="subscribe__btn">
+                                                Send
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="footer__socials">
+                                    <div class="footerSocials__labelWrap">
+                                        <p class="footerSocials__label">
+                                            Follow us
+                                        </p>
+                                    </div>
+                                    <div class="footerSocials__links">
+                                        <a href="#" class="footerSocials__link">
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </a>
+                                        <a href="#" class="footerSocials__link">
+                                            <i class="fa-brands fa-x-twitter"></i>
+                                        </a>
+                                        <a href="#" class="footerSocials__link">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <div class="footerBottom__left">
+                            <p class="footerBottom__text">
+                                Copyright 2025. All rights reserved.
+                            </p>
+                        </div>
+                        <div class="footerBottom__right">
+                            <div class="footerBottom__links">
+                                <a href="#" class="footerBottom__link">
+                                    Privacy Notice
+                                </a>
+                                <a href="#" class="footerBottom__link">
+                                    Privacy Policy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="searchOverlay" id="searchOverlay">
+        <div class="searchOverlay__content">
+            <button class="searchOverlay__close" aria-label="Close search">
+                ✕
+            </button>
+    
+            <form class="searchOverlay__form">
+                <input
+                    type="text"
+                    class="searchOverlay__input"
+                    placeholder="Search..."
+                    autofocus
+                >
+                <button type="submit" class="searchOverlay__btn">
+                    Find
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-3.7.1.min.js"></script>
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/index.global.min.js"></script>
+<script src="./js/aos.js"></script>
+<script src="./js/system.js"></script>
+<script src="./js/evetns_v1.js"></script>
+</html>

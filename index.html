@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pages Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark: #272B28;
+            --gold: #C19B5C;
+            --gold-light: #DCB26B;
+            --bg: #F6F6F6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 60px 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--dark);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(0) scale(1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(193, 155, 92, 0.0), rgba(193, 155, 92, 0.35));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .preview {
+            height: 220px;
+            background-size: cover;
+            background-position: top center;
+            filter: grayscale(10%);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .card:hover .preview {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 26px 28px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .link {
+            margin-top: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease, gap 0.3s ease;
+        }
+
+        .link::after {
+            content: "→";
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .link {
+            gap: 16px;
+            color: var(--gold-light);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML ‑ PAGES</h1>
+
+    <div class="grid">
+
+        <a class="card" target="_blank" href="main.html">
+            <div class="preview" style="background-image:url('./preview/main.png')"></div>
+            <div class="content">
+                <div class="title">Main Page</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="events_v1.html">
+            <div class="preview" style="background-image:url('./preview/events_v1.png')"></div>
+            <div class="content">
+                <div class="title">Events v1</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="events_v2.html">
+            <div class="preview" style="background-image:url('./preview/events_v2.png')"></div>
+            <div class="content">
+                <div class="title">Events v2</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="event_detail_v1.html">
+            <div class="preview" style="background-image:url('./preview/event_detail_v1.png')"></div>
+            <div class="content">
+                <div class="title">Events page buy ticket</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="event_detail_v2.html">
+            <div class="preview" style="background-image:url('./preview/event_detail_v2.png')"></div>
+            <div class="content">
+                <div class="title">Events page box office</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="premises_for_rent.html">
+            <div class="preview" style="background-image:url('./preview/premises_for_rent.png')"></div>
+            <div class="content">
+                <div class="title">Premises for rent</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="zelta_zale.html">
+            <div class="preview" style="background-image:url('./preview/zelta_zale.png')"></div>
+            <div class="content">
+                <div class="title">Zelta zāle page</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="contacts.html">
+            <div class="preview" style="background-image:url('./preview/contacts.png')"></div>
+            <div class="content">
+                <div class="title">Сontacts</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="teams.html">
+            <div class="preview" style="background-image:url('./preview/teams.png')"></div>
+            <div class="content">
+                <div class="title">Teams</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="teams_detail.html">
+            <div class="preview" style="background-image:url('./preview/teams_detail.png')"></div>
+            <div class="content">
+                <div class="title">Team Rīgas Latviešu biedrības koris "Latvis"</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="about.html">
+            <div class="preview" style="background-image:url('./preview/about.png')"></div>
+            <div class="content">
+                <div class="title">About us"</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+
+        <a class="card" target="_blank" href="event_detail_v3.html">
+            <div class="preview" style="background-image:url('./preview/event_detail_v3.png')"></div>
+            <div class="content">
+                <div class="title">Event detail v3</div>
+                <span class="link">Open</span>
+            </div>
+        </a>
+    </div>
+
+</body>
+
+</html>
